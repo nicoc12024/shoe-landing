@@ -1,0 +1,160 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 1.6; }
+
+.container {
+  width: 85%;
+  max-width: 1040px;
+  margin: 0 auto; }
+
+img {
+  width: 100%; }
+
+h1,
+h2,
+h3,
+p {
+  margin: 0; }
+
+.btn {
+  display: inline-block;
+  font-weight: 900;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  background-color: gray;
+  text-align: center;
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  background-color: #e99d03;
+  transition: transform 250ms ease-in-out; }
+  .btn:hover {
+    opacity: 0.9;
+    transform: scale(1.1); }
+
+.primary-title {
+  font-size: 4rem;
+  font-size: clamp(3rem, calc(5vw + 1rem), 4.5rem);
+  line-height: 1.1;
+  font-weight: 900;
+  text-align: center; }
+
+.section-title {
+  font-size: clamp(2.5rem, calc(5vw + 1rem), 4rem);
+  text-align: center;
+  line-height: 1.1;
+  margin-bottom: 2.5rem; }
+
+section {
+  padding-top: 7rem; }
+
+.spacing > * + * {
+  margin-top: 2rem; }
+
+.header {
+  height: 115vh;
+  display: flex;
+  align-items: center;
+  background-color: #222;
+  color: white; }
+  @supports (background-blend-mode: multiply) {
+    .header {
+      background: url(../img/shoe-3.png), radial-gradient(#444, #111);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-blend-mode: multiply; } }
+  .header .container {
+    text-align: center; }
+
+.featured-products {
+  background-color: #eee; }
+  .featured-products .split {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; }
+    .featured-products .split > * {
+      flex-basis: 250px; }
+    .featured-products .split a:nth-of-type(2) p {
+      margin-top: 1rem; }
+    .featured-products .split .shoe-content {
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      color: black;
+      position: relative;
+      z-index: 1;
+      transform: scale(0.7);
+      transition: transform 250ms ease-in-out; }
+      .featured-products .split .shoe-content:hover {
+        transform: scale(0.8); }
+        .featured-products .split .shoe-content:hover .shoe-details {
+          opacity: 1; }
+      .featured-products .split .shoe-content::after {
+        content: "";
+        padding: 100% 100% 0 0;
+        top: 0;
+        left: 0;
+        background-color: #2293b0;
+        position: absolute;
+        z-index: -1;
+        border-radius: 50%;
+        transform: scale(0.8); }
+      .featured-products .split .shoe-content .shoe-details {
+        opacity: 0;
+        transition: opacity 250ms ease-in-out; }
+        .featured-products .split .shoe-content .shoe-details .price {
+          display: block;
+          font-size: 3rem;
+          font-weight: 900; }
+
+.our-products .box-product {
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 4rem;
+  color: white;
+  text-align: center;
+  line-height: 1.2; }
+  .our-products .box-product.shoe-1 {
+    background: radial-gradient(#faa700, #e48d00); }
+    .our-products .box-product.shoe-1 a {
+      background-color: #a1173c; }
+  .our-products .box-product.shoe-2 {
+    background: radial-gradient(#fce4b3, #eac886); }
+    .our-products .box-product.shoe-2 a {
+      background-color: #2f4858; }
+  .our-products .box-product.shoe-3 {
+    background: radial-gradient(#6dd5ed, #2193b0); }
+    .our-products .box-product.shoe-3 a {
+      background-color: #008951; }
+  .our-products .box-product p {
+    color: black; }
+  .our-products .box-product .box-title {
+    font-size: 3rem;
+    text-shadow: 0 0 0.2em rgba(0, 0, 0, 0.2); }
+
+@media (min-width: 680px) {
+  .our-products .box-product {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    align-items: center;
+    text-align: left; }
+    .our-products .box-product.shoe-1 img {
+      grid-column: 2/3;
+      grid-row: 1;
+      align-items: center; }
+    .our-products .box-product.shoe-2 img {
+      grid-column: 1/2;
+      align-items: center; }
+    .our-products .box-product.shoe-3 img {
+      grid-column: 2/3;
+      grid-row: 1;
+      align-items: center; } }
